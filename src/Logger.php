@@ -5,7 +5,7 @@ namespace lloc\PushWebhook;
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
 
-class ConcreteLogger {
+class Logger {
 
 	private $log;
 
