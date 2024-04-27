@@ -5,13 +5,13 @@ namespace lloc\PushWebhook;
 class Consumer {
 
 	const ROUTE_NAMESPACE = 'lloc/push-webhook/v1';
-	private Logger $logger;
+	private ConcreteLogger $logger;
 
-	public function __construct( Logger $logger ) {
+	public function __construct( ConcreteLogger $logger ) {
 		$this->logger = $logger;
 	}
 
-	public static function init( Logger $logger ) {
+	public static function init( ConcreteLogger $logger ) {
 		$consumer = new self( $logger );
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
