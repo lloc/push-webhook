@@ -2,10 +2,13 @@
 
 namespace lloc\PushWebhook;
 
+use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
 
 class Logger {
+
+	const MAX_FILES = 7;
 
 	private $log;
 
@@ -15,7 +18,7 @@ class Logger {
 	public function __construct( string $log_file ) {
 		$formatter = new Formatter();
 
-		$handler = new StreamHandler( $log_file, MonologLogger::DEBUG );
+		$handler = new RotatingFileHandler( $log_file, self::MAX_FILES, MonologLogger::DEBUG );
 		$handler->setFormatter( $formatter );
 
 		$this->log = new MonologLogger( 'push-webhook' );
