@@ -15,7 +15,7 @@ class Consumer {
 		$consumer = new self( $logger );
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
-			'methods'  => \WP_REST_Server::READABLE,
+			'methods'  => \WP_REST_Server::CREATABLE,
 			'callback' => [ $consumer, 'handle_request' ]
 		] );
 	}

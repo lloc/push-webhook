@@ -8,5 +8,8 @@ namespace lloc\PushWebhook;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$logger = new Logger( constant( 'WP_CONTENT_DIR' ) . '/uploads/push-webhook.php' );
-Consumer::init( $logger);
+add_action( 'rest_api_init', function () {
+	$log_file = constant( 'WP_CONTENT_DIR' ) . '/uploads/push-webhook.php';
+	$logger = new Logger( $log_file );
+	Consumer::init( $logger );
+} );
