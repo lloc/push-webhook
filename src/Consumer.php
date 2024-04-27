@@ -16,7 +16,10 @@ class Consumer {
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
 			'methods'  => \WP_REST_Server::CREATABLE,
-			'callback' => [ $consumer, 'handle_request' ]
+			'callback' => [ $consumer, 'handle_request' ],
+			'permission_callback'   => function () {
+				return true;
+			}
 		] );
 	}
 
