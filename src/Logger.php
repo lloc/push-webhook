@@ -22,7 +22,7 @@ class Logger {
 		$this->log->pushHandler( $handler );
 	}
 
-	public function info( $message ): void {
-		$this->log->info( $message );
+	public function info( string $message, array $context = [] ): void {
+		$this->log->info( $message, $context );
 	}
 }

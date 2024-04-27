@@ -15,7 +15,6 @@ class Formatter extends JsonFormatter implements FormatterInterface {
 	public function format( array $record ): string {
 		$record['siteUrl'] = site_url();
 		$record['blogId']  = get_current_blog_id();
-		$record['message'] = isset( $record['message'] ) ? json_encode( $record['message'] ) : '';
 
 		return parent::format( $record );
 	}
