@@ -1,0 +1,11 @@
+{
+    "require": {
+        "monolog/monolog": "^3.6"
+    },
+   "autoload": {
+        "psr-4": {
+          "lloc\\PushWebhook\\": "src/"
+        }
+    }
+}
+
