@@ -11,7 +11,7 @@ class Consumer {
 		$this->logger = $logger;
 	}
 
-	public static function init( Logger $logger ) {
+	public static function init( Logger $logger ): Consumer {
 		$consumer = new self( $logger );
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
@@ -23,7 +23,7 @@ class Consumer {
 		] );
 	}
 
-	public function handle_request( $request ) {
+	public function handle_request( $request ): \WP_REST_Response {
 		$data = $request->get_json_params();
 
 		$this->logger->info( $data );
