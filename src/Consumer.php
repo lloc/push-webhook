@@ -24,13 +24,12 @@ class Consumer {
 	}
 
 	public function handle_request( \WP_REST_Request $request ): \WP_REST_Response {
+		$message = 'Received a request';
 		$context = $request->get_json_params();
 
-		if ( "refs/heads/master" === $context['ref'] ) {
-			$this->logger->info( 'Master branch received', $context );
-		}
+		$this->logger->info( $message, $context );
 
-		return new \WP_REST_Response( 'Received', 200 );
+		return new \WP_REST_Response( $message, 200 );
 	}
 
 }
