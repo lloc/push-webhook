@@ -2,8 +2,7 @@
 
 namespace lloc\PushWebhook;
 
-use Monolog\Level;
-use Monolog\Logger;
+use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
 
 class ConcreteLogger {
@@ -14,8 +13,8 @@ class ConcreteLogger {
 	 * @param string $log_file
 	 */
 	public function __construct( string $log_file ) {
-		$this->log = new Logger( 'push-webhook' );
-		$this->log->pushHandler( new StreamHandler( $log_file, Level::Warning ) );
+		$this->log = new MonologLogger( 'push-webhook' );
+		$this->log->pushHandler( new StreamHandler( $log_file, MonologLogger::WARNING ) );
 	}
 
 	public function info( $message ): void {
