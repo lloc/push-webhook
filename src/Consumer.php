@@ -24,10 +24,13 @@ class Consumer {
 	}
 
 	public function handle_request( \WP_REST_Request $request ): \WP_REST_Response {
-		$message = 'Received a request';
 		$context = $request->get_json_params();
 
-		$this->logger->info( $message, $context );
+		$action = $context['action'] ?? '';
+		if ( $action === 'closed' && ! empty( $context['pull_request']['merged'] ) ) {
+			$message = 'Pull request was merged';
+			$this->logger->info( $message, $context );
+		}
 
 		return new \WP_REST_Response( $message, 200 );
 	}
