@@ -15,7 +15,7 @@ class Consumer {
 		$consumer = new self( $logger );
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
-			'methods'  => \WP_REST_Server::READABLE,
+			'methods'  => \WP_REST_Server::CREATABLE,
 			'callback' => [ $consumer, 'handle_request' ],
 			'permission_callback'   => function () {
 				return true;
@@ -23,7 +23,7 @@ class Consumer {
 		] );
 	}
 
-	public function handle_request( $request ): \WP_REST_Response {
+	public function handle_request( \WP_REST_Request $request ): \WP_REST_Response {
 		$data = $request->get_json_params();
 
 		$this->logger->info( $data );
