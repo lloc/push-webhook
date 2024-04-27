@@ -14,14 +14,10 @@ class Logger {
 	 */
 	public function __construct( string $log_file ) {
 		$this->log = new MonologLogger( 'push-webhook' );
-		$this->log->pushHandler( new StreamHandler( $log_file, MonologLogger::WARNING ) );
+		$this->log->pushHandler( new StreamHandler( $log_file, MonologLogger::DEBUG ) );
 	}
 
 	public function info( $message ): void {
 		$this->log->info( $message );
-	}
-
-	public function error( $message ): void {
-		$this->log->error( $message );
 	}
 }
