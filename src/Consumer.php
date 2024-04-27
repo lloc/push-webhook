@@ -22,7 +22,7 @@ class Consumer {
 
 	public function handle_request( $request ) {
 		$data = $request->get_json_params();
-		$this->logger->log( $data );
+		$this->logger->info( $data );
 	}
 
 }

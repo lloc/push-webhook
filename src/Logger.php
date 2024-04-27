@@ -14,12 +14,12 @@ class Logger {
 	 * @param string $log_file
 	 */
 	public function __construct( string $log_file ) {
-		$this->log = new MonologLogger( 'name' );
+		$this->log = new MonologLogger( 'push-webhook' );
 		$this->log->pushHandler( new StreamHandler( $log_file, Level::Warning ) );
 	}
 
-	public function log( $message ) {
-		$this->log->warning( $message );
+	public function info( $message ) {
+		$this->log->info( $message );
 	}
 
 	public function error( $message ) {
