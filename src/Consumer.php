@@ -25,7 +25,10 @@ class Consumer {
 
 	public function handle_request( $request ) {
 		$data = $request->get_json_params();
+
 		$this->logger->info( $data );
+
+		return new \WP_REST_Response( 'Received', 200 );
 	}
 
 }
