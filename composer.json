@@ -1,6 +1,7 @@
 {
     "require": {
-        "monolog/monolog": "^2.9"
+        "monolog/monolog": "^2.9",
+        "ext-json": "*"
     },
    "autoload": {
         "psr-4": {
