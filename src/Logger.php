@@ -23,6 +23,8 @@ class Logger {
 	}
 
 	public function info( string $message, array $context = [] ): void {
+		$context = constant( 'WP_DEBUG' ) ? $context : [];
+
 		$this->log->info( $message, $context );
 	}
 }

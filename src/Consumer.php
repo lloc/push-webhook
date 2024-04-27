@@ -28,11 +28,14 @@ class Consumer {
 
 		$action = $context['action'] ?? '';
 		if ( $action === 'closed' && ! empty( $context['pull_request']['merged'] ) ) {
-			$message = 'Pull request was merged';
+			$message = 'Pull request merged';
+
+			do_action( 'pull_request_merged', $context );
 			$this->logger->info( $message, $context );
+			return new \WP_REST_Response( $message, 200 );
 		}
 
-		return new \WP_REST_Response( $message, 200 );
+		return new \WP_REST_Response( 'Request received', 200 );
 	}
 
 }
