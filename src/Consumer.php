@@ -4,7 +4,7 @@ namespace lloc\PushWebhook;
 
 class Consumer {
 
-	const ROUTE_NAMESPACE = 'lloc-pushwebhook/v1';
+	const ROUTE_NAMESPACE = 'lloc/push-webhook/v1';
 	private Logger $logger;
 
 	public function __construct( Logger $logger ) {
