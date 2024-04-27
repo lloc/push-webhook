@@ -11,7 +11,7 @@ class Consumer {
 		$this->logger = $logger;
 	}
 
-	public static function init( Logger $logger ): Consumer {
+	public static function init( Logger $logger ): void {
 		$consumer = new self( $logger );
 
 		register_rest_route( self::ROUTE_NAMESPACE, '/handle_request', [
