@@ -26,7 +26,9 @@ class Consumer {
 	public function handle_request( \WP_REST_Request $request ): \WP_REST_Response {
 		$context = $request->get_json_params();
 
-		$this->logger->info( 'Incoming request', $context );
+		if ( "refs/heads/master" === $context['ref'] ) {
+			$this->logger->info( 'Master branch received', $context );
+		}
 
 		return new \WP_REST_Response( 'Received', 200 );
 	}
