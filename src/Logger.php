@@ -2,7 +2,6 @@
 
 namespace lloc\PushWebhook;
 
-use Monolog\Formatter\JsonFormatter;
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\StreamHandler;
 
@@ -14,7 +13,7 @@ class Logger {
 	 * @param string $log_file
 	 */
 	public function __construct( string $log_file ) {
-		$formatter = new JsonFormatter();
+		$formatter = new Formatter();
 
 		$handler = new StreamHandler( $log_file, MonologLogger::DEBUG );
 		$handler->setFormatter( $formatter );
