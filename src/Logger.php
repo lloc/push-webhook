@@ -2,8 +2,9 @@
 
 namespace lloc\PushWebhook;
 
-use Monolog\Logger as MonologLogger;
+use lloc\PushWebhook\Logger\Formatter;
 use Monolog\Handler\StreamHandler;
+use Monolog\Logger as MonologLogger;
 
 class Logger {
 
@@ -23,8 +24,10 @@ class Logger {
 	}
 
 	public function info( string $message, array $context = [] ): void {
-		$context = constant( 'WP_DEBUG' ) ? $context : [];
-
 		$this->log->info( $message, $context );
+	}
+
+	public function error( string $message, array $context = [] ): void {
+		$this->log->error( $message, $context );
 	}
 }

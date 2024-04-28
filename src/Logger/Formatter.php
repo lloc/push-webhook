@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace lloc\PushWebhook;
+namespace lloc\PushWebhook\Logger;
 
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\JsonFormatter;
