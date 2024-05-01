@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage>
+        <include>
+            <directory suffix=".php">./src/</directory>
+        </include>
+    </coverage>
+    <php>
+        <const name="WP_DEBUG" value="true"/>
+    </php>
+    <testsuite name="Internal tests">
+        <directory prefix="Test" suffix=".php">./tests/</directory>
+    </testsuite>
+</phpunit>

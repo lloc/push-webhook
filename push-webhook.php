@@ -19,9 +19,12 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-add_action( 'rest_api_init', function () {
-	lloc\PushWebhook\Consumer::init();
-} );
+add_action(
+	'rest_api_init',
+	function () {
+		lloc\PushWebhook\Consumer::init();
+	}
+);
 
 function push_webhook_logger(): lloc\PushWebhook\Logger {
 	$log_file = constant( 'WP_CONTENT_DIR' ) . '/uploads/push-webhook.log';

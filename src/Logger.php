@@ -23,11 +23,11 @@ class Logger {
 		$this->log->pushHandler( $handler );
 	}
 
-	public function info( string $message, array $context = [] ): void {
+	public function info( string $message, array $context = array() ): void {
 		$this->log->info( $message, $context );
 	}
 
-	public function error( string $message, array $context = [] ): void {
+	public function error( string $message, array $context = array() ): void {
 		$this->log->error( $message, $context );
 	}
 }

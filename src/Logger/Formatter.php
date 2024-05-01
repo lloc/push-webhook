@@ -18,5 +18,4 @@ class Formatter extends JsonFormatter implements FormatterInterface {
 
 		return parent::format( $record );
 	}
-
 }

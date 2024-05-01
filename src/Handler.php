@@ -7,7 +7,7 @@ use lloc\PushWebhook\Handler\PullRequestMergedHandler;
 class Handler {
 
 	public static function init(): void {
-		add_action( Consumer::ACTION_HANDLE_REQUEST, [ __CLASS__, 'pull_request_merged' ] );
+		add_action( Consumer::ACTION_HANDLE_REQUEST, array( __CLASS__, 'pull_request_merged' ) );
 	}
 
 	public static function pull_request_merged( array $context ): void {
@@ -25,5 +25,4 @@ class Handler {
 	protected static function build_plugin_path( string $name ): string {
 		return WP_PLUGIN_DIR . '/' . strtolower( esc_attr( $name ) );
 	}
-
 }

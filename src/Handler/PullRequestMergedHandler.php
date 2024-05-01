@@ -14,7 +14,7 @@ class PullRequestMergedHandler {
 		$output  = shell_exec( $command );
 
 		if ( ! empty( $output ) ) {
-			push_webhook_logger()->error( 'Git pull failed', [ 'output' => $output ] );
+			push_webhook_logger()->error( 'Git pull failed', array( 'output' => $output ) );
 
 			return false;
 		}
