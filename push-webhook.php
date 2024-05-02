@@ -26,6 +26,14 @@ add_action(
 	}
 );
 
+add_action(
+	'init',
+	function () {
+		lloc\PushWebhook\Handler::init();
+		lloc\PushWebhook\Executor::init();
+	}
+);
+
 function push_webhook_logger(): lloc\PushWebhook\Logger {
 	$log_file = constant( 'WP_CONTENT_DIR' ) . '/uploads/push-webhook.log';
 

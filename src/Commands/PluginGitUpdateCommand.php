@@ -1,14 +1,13 @@
 <?php declare( strict_types = 1 );
 
-namespace lloc\PushWebhook\Handler;
+namespace lloc\PushWebhook\Commands;
 
-class PullRequestMergedHandler {
+class PluginGitUpdateCommand extends PluginCommand implements CommandInterface {
 
-	public function __construct( string $path ) {
-		$this->path = $path;
-	}
-
-	public function run(): bool {
+	/**
+	 * @return bool
+	 */
+	public function exec(): bool {
 		chdir( $this->path );
 		$command = 'git pull origin master 2>&1';
 		$output  = shell_exec( $command );

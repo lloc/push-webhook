@@ -23,10 +23,22 @@ class Logger {
 		$this->log->pushHandler( $handler );
 	}
 
+	/**
+	 * @param string $message
+	 * @param array  $context
+	 *
+	 * @return void
+	 */
 	public function info( string $message, array $context = array() ): void {
 		$this->log->info( $message, $context );
 	}
 
+	/**
+	 * @param string $message
+	 * @param array  $context
+	 *
+	 * @return void
+	 */
 	public function error( string $message, array $context = array() ): void {
 		$this->log->error( $message, $context );
 	}

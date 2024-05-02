@@ -9,6 +9,9 @@ class Consumer {
 
 	const ACTION_HANDLE_REQUEST = 'lloc/push-webhook/handle_request';
 
+	/**
+	 * @return void
+	 */
 	public static function init(): void {
 		register_rest_route(
 			self::ROUTE_NAMESPACE,

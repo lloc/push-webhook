@@ -7,6 +7,7 @@
     </coverage>
     <php>
         <const name="WP_DEBUG" value="true"/>
+        <const name="WP_PLUGIN_DIR" value="/var/ww/html/wp-content/plugins"/>
     </php>
     <testsuite name="Internal tests">
         <directory prefix="Test" suffix=".php">./tests/</directory>
