@@ -6,7 +6,6 @@ use lloc\PushWebhook\Commands\PluginGitUpdateCommand;
 
 class Executor {
 
-
 	protected array $commands = array();
 
 	/**
