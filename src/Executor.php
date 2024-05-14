@@ -2,6 +2,7 @@
 
 namespace lloc\PushWebhook;
 
+use lloc\PushWebhook\Commands\PluginComposerUpdateCommand;
 use lloc\PushWebhook\Commands\PluginGitUpdateCommand;
 
 class Executor {
@@ -12,7 +13,7 @@ class Executor {
 	 * @return void
 	 */
 	public static function init(): void {
-		add_action( Handler::ACTION_PULL_REQUEST_MERGED, array( __CLASS__, 'execute_plugin_git_update' ) );
+		add_action( Handler::ACTION_PULL_REQUEST_MERGED, array( __CLASS__, 'execute_plugin_to_update' ) );
 	}
 
 	/**
@@ -20,7 +21,8 @@ class Executor {
 	 *
 	 * @return void
 	 */
-	public static function execute_plugin_git_update( string $name ): void {
+	public static function execute_plugin_to_update( string $name ): void {
 		( new PluginGitUpdateCommand( $name ) )->exec();
+		( new PluginComposerUpdateCommand( $name ) )->exec();
 	}
 }

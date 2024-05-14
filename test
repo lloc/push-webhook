@@ -70,3 +70,5 @@
 {"message":"test","context":{},"level":400,"level_name":"ERROR","channel":"push-webhook","datetime":"2024-05-02T21:46:42.153490+00:00","extra":{},"siteUrl":"https://example.org","blogId":1}
 {"message":"test","context":{},"level":200,"level_name":"INFO","channel":"push-webhook","datetime":"2024-05-02T21:53:31.854140+00:00","extra":{},"siteUrl":"https://example.org","blogId":1}
 {"message":"test","context":{},"level":400,"level_name":"ERROR","channel":"push-webhook","datetime":"2024-05-02T21:53:31.859835+00:00","extra":{},"siteUrl":"https://example.org","blogId":1}
+{"message":"test","context":{},"level":200,"level_name":"INFO","channel":"push-webhook","datetime":"2024-05-14T15:40:35.306037+00:00","extra":{},"siteUrl":"https://example.org","blogId":1}
+{"message":"test","context":{},"level":400,"level_name":"ERROR","channel":"push-webhook","datetime":"2024-05-14T15:40:35.307267+00:00","extra":{},"siteUrl":"https://example.org","blogId":1}

@@ -10,6 +10,8 @@ class TestExecutor extends PushWebhookTestCase {
 	public function test_init(): void {
 		Executor::init();
 
-		$this->assertTrue( has_action( Handler::ACTION_PULL_REQUEST_MERGED, array( Executor::class, 'execute_plugin_git_update' ) ) === 10 );
+		$has_action = has_action( Handler::ACTION_PULL_REQUEST_MERGED, array( Executor::class, 'execute_plugin_to_update' ) );
+
+		$this->assertTrue( $has_action === 10 );
 	}
 }
