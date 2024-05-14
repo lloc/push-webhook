@@ -9,7 +9,7 @@ class PluginComposerUpdateCommand extends PluginCommand implements CommandInterf
 	 */
 	public function exec(): bool {
 		chdir( $this->path );
-		$command = 'composer update -W 2>&1';
+		$command = 'composer update -W --no-dev 2>&1';
 		$output  = shell_exec( $command );
 
 		if ( ! empty( $output ) ) {
